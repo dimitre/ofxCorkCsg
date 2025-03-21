@@ -48,7 +48,7 @@ void ofApp::draw()
     {
         if (operation == (Operation)i) ofSetColor(0);
         else ofSetColor(200);
-        ostringstream oss;
+        std::ostringstream oss;
         oss << i << ": " << toString((Operation)i);
         ofDrawBitmapString(oss.str(), 10.f, 20.f + i * 20.f);
     }

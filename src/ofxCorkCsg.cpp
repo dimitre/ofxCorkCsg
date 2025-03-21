@@ -139,7 +139,7 @@ namespace ofxCorkCsg
             {
                 unsigned oldIdx = getIndex(inMesh, i);
                 auto& v = inMesh.getVertices()[oldIdx];
-                unsigned idx = numeric_limits<unsigned>::max();
+                unsigned idx = std::numeric_limits<unsigned>::max();
                 for (unsigned i = 0; i < outMesh.getNumVertices(); ++i)
                 {
                     if (glm::distance2(v, outMesh.getVertices()[i]) < epsilonSq)
@@ -157,7 +157,7 @@ namespace ofxCorkCsg
                     }
                 }
                 
-                if (idx == numeric_limits<unsigned>::max())
+                if (idx == std::numeric_limits<unsigned>::max())
                 {
                     // didn't find vertex so add a new one
                     idx = outMesh.getNumVertices();
@@ -240,7 +240,7 @@ namespace ofxCorkCsg
             float r = radius * (sliceIdx + 1) / (float)radialSlices;
             for (unsigned segmentIdx = 0; segmentIdx < segments; ++segmentIdx)
             {
-                float theta = TWO_PI * segmentIdx / (float)segments;
+                float theta = glm::two_pi<float>() * segmentIdx / (float)segments;
                 cap.addVertex(glm::vec3(r * sin(theta), 0.f, r * cos(theta)));
             }
         }
@@ -282,7 +282,7 @@ namespace ofxCorkCsg
             float y = ofMap(sliceIdx, 0, verticalSlices - 2, -.5f * sectionHeight, .5f * sectionHeight);
             for (unsigned segmentIdx = 0; segmentIdx < segments; ++segmentIdx)
             {
-                float theta = TWO_PI * segmentIdx / (float)segments;
+                float theta = glm::two_pi<float>() * segmentIdx / (float)segments;
                 body.addVertex(glm::vec3(radius * sin(theta), y, radius * cos(theta)));
             }
         }
@@ -417,7 +417,7 @@ namespace ofxCorkCsg
                 unsigned oldIdx = getIndex(inMesh, i);
                 auto& v = inMesh.getVertices()[oldIdx];
                 auto it = vertexLookup.find(v);
-                unsigned idx = numeric_limits<unsigned>::max();
+                unsigned idx = std::numeric_limits<unsigned>::max();
                 if (it == vertexLookup.end())
                 {
                     idx = outMesh.getNumVertices();
