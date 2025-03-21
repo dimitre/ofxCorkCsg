@@ -1,6 +1,7 @@
 /* Definitions for GNU multiple precision functions.   -*- mode: c -*-
 
-Copyright 1991, 1993-1997, 1999-2014 Free Software Foundation, Inc.
+Copyright 1991, 1993-1997, 1999-2016, 2020, 2021 Free Software
+Foundation, Inc.
 
 This file is part of the GNU MP Library.
 
@@ -49,13 +50,11 @@ see https://www.gnu.org/licenses/.  */
 #define GMP_NAIL_MASK     (~ GMP_NUMB_MASK)
 
 
-/* The following (everything under ifndef __GNU_MP__) must be identical in
-   gmp.h and mp.h to allow both to be included in an application or during
-   the library build.  */
 #ifndef __GNU_MP__
-#define __GNU_MP__ 5
+#define __GNU_MP__ 6
 
 #include <stddef.h>    /* for size_t */
+#include <limits.h>
 
 /* Instantiated by configure. */
 #if ! defined (__GMP_WITHIN_CONFIGURE)
@@ -229,10 +228,10 @@ typedef const __mpf_struct *mpf_srcptr;
 typedef __mpf_struct *mpf_ptr;
 typedef const __mpq_struct *mpq_srcptr;
 typedef __mpq_struct *mpq_ptr;
+typedef __gmp_randstate_struct *gmp_randstate_ptr;
+typedef const __gmp_randstate_struct *gmp_randstate_srcptr;
 
 
-/* This is not wanted in mp.h, so put it outside the __GNU_MP__ common
-   section. */
 #if __GMP_LIBGMP_DLL
 #ifdef __GMP_WITHIN_GMPXX
 /* compiling to go into a DLL libgmpxx */
@@ -267,7 +266,9 @@ typedef __mpq_struct *mpq_ptr;
   || defined (_MSL_STDIO_H)           /* Metrowerks */          \
   || defined (_STDIO_H_INCLUDED)      /* QNX4 */		\
   || defined (_ISO_STDIO_ISO_H)       /* Sun C++ */		\
-  || defined (__STDIO_LOADED)         /* VMS */
+  || defined (__STDIO_LOADED)         /* VMS */			\
+  || defined (_STDIO)                 /* HPE NonStop */         \
+  || defined (__DEFINED_FILE)         /* musl */
 #define _GMP_H_HAVE_FILE 1
 #endif
 
@@ -344,7 +345,11 @@ typedef __mpq_struct *mpq_ptr;
    __GMP_ATTRIBUTE_PURE.  */
 
 #if defined (__cplusplus)
+#if __cplusplus >= 201103L
+#define __GMP_NOTHROW  noexcept
+#else
 #define __GMP_NOTHROW  throw ()
+#endif
 #else
 #define __GMP_NOTHROW
 #endif
@@ -445,12 +450,6 @@ typedef __mpq_struct *mpq_ptr;
 #define __GMP_ABS(x)   ((x) >= 0 ? (x) : -(x))
 #define __GMP_MAX(h,i) ((h) > (i) ? (h) : (i))
 
-/* __GMP_USHRT_MAX is not "~ (unsigned short) 0" because short is promoted
-   to int by "~". It still needs to have the promoted type.  */
-#define __GMP_UINT_MAX   (~ (unsigned) 0)
-#define __GMP_ULONG_MAX  (~ (unsigned long) 0)
-#define __GMP_USHRT_MAX  (0 + (unsigned short) ~0)
-
 
 /* __builtin_expect is in gcc 3.0, and not in 2.95. */
 #if __GMP_GNUC_PREREQ (3,0)
@@ -468,7 +467,7 @@ typedef __mpq_struct *mpq_ptr;
 #endif
 
 
-/* Allow direct user access to numerator and denominator of a mpq_t object.  */
+/* Allow direct user access to numerator and denominator of an mpq_t object.  */
 #define mpq_numref(Q) (&((Q)->_mp_num))
 #define mpq_denref(Q) (&((Q)->_mp_den))
 
@@ -502,37 +501,37 @@ __GMP_DECLSPEC extern const char * const gmp_version;
 
 /* obsolete */
 #define gmp_randinit __gmp_randinit
-__GMP_DECLSPEC void gmp_randinit (gmp_randstate_t, gmp_randalg_t, ...);
+__GMP_DECLSPEC void gmp_randinit (gmp_randstate_ptr, gmp_randalg_t, ...);
 
 #define gmp_randinit_default __gmp_randinit_default
-__GMP_DECLSPEC void gmp_randinit_default (gmp_randstate_t);
+__GMP_DECLSPEC void gmp_randinit_default (gmp_randstate_ptr);
 
 #define gmp_randinit_lc_2exp __gmp_randinit_lc_2exp
-__GMP_DECLSPEC void gmp_randinit_lc_2exp (gmp_randstate_t, mpz_srcptr, unsigned long int, mp_bitcnt_t);
+__GMP_DECLSPEC void gmp_randinit_lc_2exp (gmp_randstate_ptr, mpz_srcptr, unsigned long int, mp_bitcnt_t);
 
 #define gmp_randinit_lc_2exp_size __gmp_randinit_lc_2exp_size
-__GMP_DECLSPEC int gmp_randinit_lc_2exp_size (gmp_randstate_t, mp_bitcnt_t);
+__GMP_DECLSPEC int gmp_randinit_lc_2exp_size (gmp_randstate_ptr, mp_bitcnt_t);
 
 #define gmp_randinit_mt __gmp_randinit_mt
-__GMP_DECLSPEC void gmp_randinit_mt (gmp_randstate_t);
+__GMP_DECLSPEC void gmp_randinit_mt (gmp_randstate_ptr);
 
 #define gmp_randinit_set __gmp_randinit_set
-__GMP_DECLSPEC void gmp_randinit_set (gmp_randstate_t, const __gmp_randstate_struct *);
+__GMP_DECLSPEC void gmp_randinit_set (gmp_randstate_ptr, gmp_randstate_srcptr);
 
 #define gmp_randseed __gmp_randseed
-__GMP_DECLSPEC void gmp_randseed (gmp_randstate_t, mpz_srcptr);
+__GMP_DECLSPEC void gmp_randseed (gmp_randstate_ptr, mpz_srcptr);
 
 #define gmp_randseed_ui __gmp_randseed_ui
-__GMP_DECLSPEC void gmp_randseed_ui (gmp_randstate_t, unsigned long int);
+__GMP_DECLSPEC void gmp_randseed_ui (gmp_randstate_ptr, unsigned long int);
 
 #define gmp_randclear __gmp_randclear
-__GMP_DECLSPEC void gmp_randclear (gmp_randstate_t);
+__GMP_DECLSPEC void gmp_randclear (gmp_randstate_ptr);
 
 #define gmp_urandomb_ui __gmp_urandomb_ui
-__GMP_DECLSPEC unsigned long gmp_urandomb_ui (gmp_randstate_t, unsigned long);
+__GMP_DECLSPEC unsigned long gmp_urandomb_ui (gmp_randstate_ptr, unsigned long);
 
 #define gmp_urandomm_ui __gmp_urandomm_ui
-__GMP_DECLSPEC unsigned long gmp_urandomm_ui (gmp_randstate_t, unsigned long);
+__GMP_DECLSPEC unsigned long gmp_urandomm_ui (gmp_randstate_ptr, unsigned long);
 
 
 /**************** Formatted output routines.  ****************/
@@ -854,13 +853,13 @@ __GMP_DECLSPEC mp_bitcnt_t mpz_hamdist (mpz_srcptr, mpz_srcptr) __GMP_NOTHROW __
 __GMP_DECLSPEC void mpz_import (mpz_ptr, size_t, int, size_t, int, size_t, const void *);
 
 #define mpz_init __gmpz_init
-__GMP_DECLSPEC void mpz_init (mpz_ptr);
+__GMP_DECLSPEC void mpz_init (mpz_ptr) __GMP_NOTHROW;
 
 #define mpz_init2 __gmpz_init2
 __GMP_DECLSPEC void mpz_init2 (mpz_ptr, mp_bitcnt_t);
 
 #define mpz_inits __gmpz_inits
-__GMP_DECLSPEC void mpz_inits (mpz_ptr, ...);
+__GMP_DECLSPEC void mpz_inits (mpz_ptr, ...) __GMP_NOTHROW;
 
 #define mpz_init_set __gmpz_init_set
 __GMP_DECLSPEC void mpz_init_set (mpz_ptr, mpz_srcptr);
@@ -952,6 +951,9 @@ __GMP_DECLSPEC void mpz_neg (mpz_ptr, mpz_srcptr);
 #define mpz_nextprime __gmpz_nextprime
 __GMP_DECLSPEC void mpz_nextprime (mpz_ptr, mpz_srcptr);
 
+#define mpz_prevprime __gmpz_prevprime
+__GMP_DECLSPEC int mpz_prevprime (mpz_ptr, mpz_srcptr);
+
 #define mpz_out_raw __gmpz_out_raw
 #ifdef _GMP_H_HAVE_FILE
 __GMP_DECLSPEC size_t mpz_out_raw (FILE *, mpz_srcptr);
@@ -1009,7 +1011,7 @@ __GMP_DECLSPEC int mpz_root (mpz_ptr, mpz_srcptr, unsigned long int);
 __GMP_DECLSPEC void mpz_rootrem (mpz_ptr, mpz_ptr, mpz_srcptr, unsigned long int);
 
 #define mpz_rrandomb __gmpz_rrandomb
-__GMP_DECLSPEC void mpz_rrandomb (mpz_ptr, gmp_randstate_t, mp_bitcnt_t);
+__GMP_DECLSPEC void mpz_rrandomb (mpz_ptr, gmp_randstate_ptr, mp_bitcnt_t);
 
 #define mpz_scan0 __gmpz_scan0
 __GMP_DECLSPEC mp_bitcnt_t mpz_scan0 (mpz_srcptr, mp_bitcnt_t) __GMP_NOTHROW __GMP_ATTRIBUTE_PURE;
@@ -1109,10 +1111,10 @@ __GMP_DECLSPEC int mpz_tstbit (mpz_srcptr, mp_bitcnt_t) __GMP_NOTHROW __GMP_ATTR
 __GMP_DECLSPEC void mpz_ui_pow_ui (mpz_ptr, unsigned long int, unsigned long int);
 
 #define mpz_urandomb __gmpz_urandomb
-__GMP_DECLSPEC void mpz_urandomb (mpz_ptr, gmp_randstate_t, mp_bitcnt_t);
+__GMP_DECLSPEC void mpz_urandomb (mpz_ptr, gmp_randstate_ptr, mp_bitcnt_t);
 
 #define mpz_urandomm __gmpz_urandomm
-__GMP_DECLSPEC void mpz_urandomm (mpz_ptr, gmp_randstate_t, mpz_srcptr);
+__GMP_DECLSPEC void mpz_urandomm (mpz_ptr, gmp_randstate_ptr, mpz_srcptr);
 
 #define mpz_xor __gmpz_xor
 #define mpz_eor __gmpz_xor
@@ -1162,6 +1164,9 @@ __GMP_DECLSPEC int _mpq_cmp_si (mpq_srcptr, long, unsigned long) __GMP_ATTRIBUTE
 
 #define _mpq_cmp_ui __gmpq_cmp_ui
 __GMP_DECLSPEC int _mpq_cmp_ui (mpq_srcptr, unsigned long int, unsigned long int) __GMP_ATTRIBUTE_PURE;
+
+#define mpq_cmp_z __gmpq_cmp_z
+__GMP_DECLSPEC int mpq_cmp_z (mpq_srcptr, mpz_srcptr) __GMP_ATTRIBUTE_PURE;
 
 #define mpq_div __gmpq_div
 __GMP_DECLSPEC void mpq_div (mpq_ptr, mpq_srcptr, mpq_srcptr);
@@ -1269,6 +1274,9 @@ __GMP_DECLSPEC void mpf_clears (mpf_ptr, ...);
 
 #define mpf_cmp __gmpf_cmp
 __GMP_DECLSPEC int mpf_cmp (mpf_srcptr, mpf_srcptr) __GMP_NOTHROW __GMP_ATTRIBUTE_PURE;
+
+#define mpf_cmp_z __gmpf_cmp_z
+__GMP_DECLSPEC int mpf_cmp_z (mpf_srcptr, mpz_srcptr) __GMP_NOTHROW __GMP_ATTRIBUTE_PURE;
 
 #define mpf_cmp_d __gmpf_cmp_d
 __GMP_DECLSPEC int mpf_cmp_d (mpf_srcptr, double) __GMP_ATTRIBUTE_PURE;
@@ -1452,7 +1460,7 @@ __GMP_DECLSPEC void mpf_ui_div (mpf_ptr, unsigned long int, mpf_srcptr);
 __GMP_DECLSPEC void mpf_ui_sub (mpf_ptr, unsigned long int, mpf_srcptr);
 
 #define mpf_urandomb __gmpf_urandomb
-__GMP_DECLSPEC void mpf_urandomb (mpf_t, gmp_randstate_t, mp_bitcnt_t);
+__GMP_DECLSPEC void mpf_urandomb (mpf_ptr, gmp_randstate_ptr, mp_bitcnt_t);
 
 
 /************ Low level positive-integer (i.e. N) routines.  ************/
@@ -1480,6 +1488,14 @@ __GMP_DECLSPEC mp_limb_t mpn_addmul_1 (mp_ptr, mp_srcptr, mp_size_t, mp_limb_t);
 __GMP_DECLSPEC int mpn_cmp (mp_srcptr, mp_srcptr, mp_size_t) __GMP_NOTHROW __GMP_ATTRIBUTE_PURE;
 #endif
 
+#define mpn_zero_p __MPN(zero_p)
+#if __GMP_INLINE_PROTOTYPES || defined (__GMP_FORCE_mpn_zero_p)
+__GMP_DECLSPEC int mpn_zero_p (mp_srcptr, mp_size_t) __GMP_NOTHROW __GMP_ATTRIBUTE_PURE;
+#endif
+
+#define mpn_divexact_1 __MPN(divexact_1)
+__GMP_DECLSPEC void mpn_divexact_1 (mp_ptr, mp_srcptr, mp_size_t, mp_limb_t);
+
 #define mpn_divexact_by3(dst,src,size) \
   mpn_divexact_by3c (dst, src, size, __GMP_CAST (mp_limb_t, 0))
 
@@ -1506,6 +1522,9 @@ __GMP_DECLSPEC mp_limb_t mpn_div_qr_2 (mp_ptr, mp_ptr, mp_srcptr, mp_size_t, mp_
 
 #define mpn_gcd __MPN(gcd)
 __GMP_DECLSPEC mp_size_t mpn_gcd (mp_ptr, mp_ptr, mp_size_t, mp_ptr, mp_size_t);
+
+#define mpn_gcd_11 __MPN(gcd_11)
+__GMP_DECLSPEC mp_limb_t mpn_gcd_11 (mp_limb_t, mp_limb_t) __GMP_ATTRIBUTE_PURE;
 
 #define mpn_gcd_1 __MPN(gcd_1)
 __GMP_DECLSPEC mp_limb_t mpn_gcd_1 (mp_srcptr, mp_size_t, mp_limb_t) __GMP_ATTRIBUTE_PURE;
@@ -1546,9 +1565,7 @@ __GMP_DECLSPEC mp_limb_t mpn_neg (mp_ptr, mp_srcptr, mp_size_t);
 #endif
 
 #define mpn_com __MPN(com)
-#if __GMP_INLINE_PROTOTYPES || defined (__GMP_FORCE_mpn_com)
 __GMP_DECLSPEC void mpn_com (mp_ptr, mp_srcptr, mp_size_t);
-#endif
 
 #define mpn_perfect_square_p __MPN(perfect_square_p)
 __GMP_DECLSPEC int mpn_perfect_square_p (mp_srcptr, mp_size_t) __GMP_ATTRIBUTE_PURE;
@@ -1648,6 +1665,9 @@ __GMP_DECLSPEC mp_limb_t mpn_sec_sub_1 (mp_ptr, mp_srcptr, mp_size_t, mp_limb_t,
 #define mpn_sec_sub_1_itch __MPN(sec_sub_1_itch)
 __GMP_DECLSPEC mp_size_t mpn_sec_sub_1_itch (mp_size_t) __GMP_ATTRIBUTE_PURE;
 
+#define mpn_cnd_swap  __MPN(cnd_swap)
+__GMP_DECLSPEC void mpn_cnd_swap (mp_limb_t, volatile mp_limb_t *, volatile mp_limb_t *, mp_size_t);
+
 #define mpn_sec_mul __MPN(sec_mul)
 __GMP_DECLSPEC void mpn_sec_mul (mp_ptr, mp_srcptr, mp_size_t, mp_srcptr, mp_size_t, mp_ptr);
 #define mpn_sec_mul_itch __MPN(sec_mul_itch)
@@ -1727,7 +1747,7 @@ __GMP_EXTERN_INLINE
 int
 mpz_fits_uint_p (mpz_srcptr __gmp_z) __GMP_NOTHROW
 {
-  __GMPZ_FITS_UTYPE_P (__gmp_z, __GMP_UINT_MAX);
+  __GMPZ_FITS_UTYPE_P (__gmp_z, UINT_MAX);
 }
 #endif
 
@@ -1738,7 +1758,7 @@ __GMP_EXTERN_INLINE
 int
 mpz_fits_ulong_p (mpz_srcptr __gmp_z) __GMP_NOTHROW
 {
-  __GMPZ_FITS_UTYPE_P (__gmp_z, __GMP_ULONG_MAX);
+  __GMPZ_FITS_UTYPE_P (__gmp_z, ULONG_MAX);
 }
 #endif
 
@@ -1749,7 +1769,7 @@ __GMP_EXTERN_INLINE
 int
 mpz_fits_ushort_p (mpz_srcptr __gmp_z) __GMP_NOTHROW
 {
-  __GMPZ_FITS_UTYPE_P (__gmp_z, __GMP_USHRT_MAX);
+  __GMPZ_FITS_UTYPE_P (__gmp_z, USHRT_MAX);
 }
 #endif
 
@@ -1766,7 +1786,7 @@ mpz_get_ui (mpz_srcptr __gmp_z) __GMP_NOTHROW
   /* This is a "#if" rather than a plain "if" so as to avoid gcc warnings
      about "<< GMP_NUMB_BITS" exceeding the type size, and to avoid Borland
      C++ 6.0 warnings about condition always true for something like
-     "__GMP_ULONG_MAX < GMP_NUMB_MASK".  */
+     "ULONG_MAX < GMP_NUMB_MASK".  */
 #if GMP_NAIL_BITS == 0 || defined (_LONG_LONG_LIMB)
   /* limb==long and no nails, or limb==longlong, one limb is enough */
   return (__gmp_n != 0 ? __gmp_l : 0);
@@ -1834,7 +1854,7 @@ mpz_popcount (mpz_srcptr __gmp_u) __GMP_NOTHROW
   mp_bitcnt_t    __gmp_result;
 
   __gmp_usize = __gmp_u->_mp_size;
-  __gmp_result = (__gmp_usize < 0 ? __GMP_ULONG_MAX : 0);
+  __gmp_result = (__gmp_usize < 0 ? ~ __GMP_CAST (mp_bitcnt_t, 0) : __GMP_CAST (mp_bitcnt_t, 0));
   if (__GMP_LIKELY (__gmp_usize > 0))
     __gmp_result =  mpn_popcount (__gmp_u->_mp_d, __gmp_usize);
   return __gmp_result;
@@ -2157,6 +2177,22 @@ mpn_cmp (mp_srcptr __gmp_xp, mp_srcptr __gmp_yp, mp_size_t __gmp_size) __GMP_NOT
 }
 #endif
 
+#if defined (__GMP_EXTERN_INLINE) || defined (__GMP_FORCE_mpn_zero_p)
+#if ! defined (__GMP_FORCE_mpn_zero_p)
+__GMP_EXTERN_INLINE
+#endif
+int
+mpn_zero_p (mp_srcptr __gmp_p, mp_size_t __gmp_n) __GMP_NOTHROW
+{
+  /* if (__GMP_LIKELY (__gmp_n > 0)) */
+    do {
+      if (__gmp_p[--__gmp_n] != 0)
+	return 0;
+    } while (__gmp_n != 0);
+  return 1;
+}
+#endif
+
 #if defined (__GMP_EXTERN_INLINE) || defined (__GMP_FORCE_mpn_sub)
 #if ! defined (__GMP_FORCE_mpn_sub)
 __GMP_EXTERN_INLINE
@@ -2190,14 +2226,20 @@ __GMP_EXTERN_INLINE
 mp_limb_t
 mpn_neg (mp_ptr __gmp_rp, mp_srcptr __gmp_up, mp_size_t __gmp_n)
 {
-  mp_limb_t __gmp_ul, __gmp_cy;
-  __gmp_cy = 0;
-  do {
-      __gmp_ul = *__gmp_up++;
-      *__gmp_rp++ = -__gmp_ul - __gmp_cy;
-      __gmp_cy |= __gmp_ul != 0;
-  } while (--__gmp_n != 0);
-  return __gmp_cy;
+  while (*__gmp_up == 0) /* Low zero limbs are unchanged by negation. */
+    {
+      *__gmp_rp = 0;
+      if (!--__gmp_n) /* All zero */
+	return 0;
+      ++__gmp_up; ++__gmp_rp;
+    }
+
+  *__gmp_rp = (- *__gmp_up) & GMP_NUMB_MASK;
+
+  if (--__gmp_n) /* Higher limbs get complemented. */
+    mpn_com (++__gmp_rp, ++__gmp_up, __gmp_n);
+
+  return 1;
 }
 #endif
 
@@ -2284,16 +2326,17 @@ enum
   GMP_ERROR_UNSUPPORTED_ARGUMENT = 1,
   GMP_ERROR_DIVISION_BY_ZERO = 2,
   GMP_ERROR_SQRT_OF_NEGATIVE = 4,
-  GMP_ERROR_INVALID_ARGUMENT = 8
+  GMP_ERROR_INVALID_ARGUMENT = 8,
+  GMP_ERROR_MPZ_OVERFLOW = 16
 };
 
 /* Define CC and CFLAGS which were used to build this version of GMP */
 #define __GMP_CC "clang"
-#define __GMP_CFLAGS "-O2 -pedantic -fomit-frame-pointer -m64 -mtune=corei7 -march=corei7 -DNO_ASM"
+#define __GMP_CFLAGS "-O2 -pedantic -march=armv8-a"
 
-/* Major version number is the value of __GNU_MP__ too, above and in mp.h. */
+/* Major version number is the value of __GNU_MP__ too, above. */
 #define __GNU_MP_VERSION            6
-#define __GNU_MP_VERSION_MINOR      0
+#define __GNU_MP_VERSION_MINOR      3
 #define __GNU_MP_VERSION_PATCHLEVEL 0
 #define __GNU_MP_RELEASE (__GNU_MP_VERSION * 10000 + __GNU_MP_VERSION_MINOR * 100 + __GNU_MP_VERSION_PATCHLEVEL)
 

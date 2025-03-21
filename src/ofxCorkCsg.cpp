@@ -30,6 +30,8 @@
  *
  */
 #include "ofxCorkCsg.h"
+#include <vector>
+#include <map>
 
 namespace ofxCorkCsg
 {
@@ -133,7 +135,7 @@ namespace ofxCorkCsg
         if (inMesh.getMode() == OF_PRIMITIVE_TRIANGLES)
         {
             // keep track of how many vertices have been unified so we can divide out at the end
-            vector<unsigned> divisors;
+            std::vector<unsigned> divisors;
             
             for (unsigned i = 0; i < getNumVertices(inMesh); ++i)
             {
@@ -407,10 +409,10 @@ namespace ofxCorkCsg
                 }
                 else return a.x < b.x;
             };
-            map<glm::vec3, unsigned, decltype(compare)> vertexLookup(compare);
+            std::map<glm::vec3, unsigned, decltype(compare)> vertexLookup(compare);
             
             // keep track of how many vertices have been unified so we can divide out at the end
-            vector<unsigned> divisors;
+            std::vector<unsigned> divisors;
             
             for (unsigned i = 0; i < getNumVertices(inMesh); ++i)
             {

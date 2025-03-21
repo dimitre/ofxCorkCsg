@@ -32,7 +32,9 @@
 #pragma once
 
 #include "cork.h"
-#include "ofMain.h"
+//#include "ofMain.h"
+#include "ofMesh.h"
+#include <vector>
 
 namespace ofxCorkCsg
 {
