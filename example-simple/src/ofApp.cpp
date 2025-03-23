@@ -34,8 +34,8 @@ void ofApp::update()
 //--------------------------------------------------------------
 void ofApp::draw()
 {
-    ofSetWindowTitle(ofToString(ofGetFrameRate(), 2));
-    
+	ofSetWindowTitle(ofToString(ofGetFrameRate(), 2));
+
     cam.begin();
     ofPushStyle();
     ofSetColor(0);
