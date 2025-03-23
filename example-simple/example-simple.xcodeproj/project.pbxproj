@@ -1,577 +1,463 @@
-// !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 54;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		"1337E44B-F144-4975-ABBF-B50330B3D5EF" /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "20D12C55-D381-4571-B332-5C614B49A79A" /* main.cpp */; };
-		"2F7D54EF-64CC-4A66-BFE9-19A56033D261" /* triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = "72178A3A-3F4C-46B9-9846-1B3632E5EB84" /* triangle.c */; };
-		"369DC71E-DB5B-475C-A925-AE6868BC07A1" /* empty3d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "408BB277-971E-4DEA-A241-A89938289B51" /* empty3d.cpp */; };
-		"4F236470-51BF-4CB8-BD98-C63050F27893" /* MeshWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "65F92720-D0CB-4A55-B259-288B4B7AFFB9" /* MeshWrapper.cpp */; };
-		"6547261B-E201-46E2-A8FB-FEA5BC4AD743" /* files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "10A9C3EE-C9E7-4E4F-8D5D-10FFFE6F7420" /* files.cpp */; };
-		"6708805A-9910-40AA-A202-B0C681F0BB80" /* cork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "1A8E7C3B-4D62-4BA2-A668-E8C74198070B" /* cork.cpp */; };
-		"72841A6B-73E6-4797-BABF-11850D05BDD7" /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "B31FB72E-1F21-4B4C-8414-67593175C40B" /* log.cpp */; };
-		"7B17C9B4-F786-44B5-8516-9773A806F2A2" /* off.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "4D5C4C8F-BD9E-41B0-946F-223032891885" /* off.cpp */; };
-		"7D8DE33F-FDF0-403E-A29C-0DF0FB8A2BD7" /* ofxCorkCsg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "AB5FB721-B2AC-4155-B7EE-11D09740CE11" /* ofxCorkCsg.cpp */; };
-		"819AAB71-9D80-4D08-AFF2-2EEDCEF97D4F" /* ifs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "76EE2347-8D35-4ADE-A91E-76FCE7E353F3" /* ifs.cpp */; };
-		"949CC023-A5D3-4687-9926-B7BDA4D0F700" /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "633333A5-DD43-434F-A607-5402F7B4092C" /* ofApp.cpp */; };
-		"9AD66097-3C95-4C8A-8DB4-BDCF4FB10C3D" /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "8A71816F-D2CA-46F6-8F07-795ABF58F069" /* timer.cpp */; };
-		"F5F26AEB-BC82-4C62-9106-F1DDF7E52407" /* quantization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = "27838B07-CF46-4AAA-8953-79CB44F53940" /* quantization.cpp */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E4A5B60F29BAAAE400C2D356 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFileReference section */
-		039A07FE2D53EA3200B8B21C /* example-simpleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-simpleDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		"10A9C3EE-C9E7-4E4F-8D5D-10FFFE6F7420" /* files.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = files.cpp; sourceTree = "<group>"; };
-		"145F24AE-36CA-47F8-9124-AE51BD789D8D" /* vec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec.h; sourceTree = "<group>"; };
-		191CD6FA2847E21E0085CBB6 /* of.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = of.entitlements; sourceTree = "<group>"; };
-		191EF70929D778A400F35F26 /* openFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = openFrameworks; path = ../../../libs/openFrameworks; sourceTree = SOURCE_ROOT; };
-		"1A8E7C3B-4D62-4BA2-A668-E8C74198070B" /* cork.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cork.cpp; sourceTree = "<group>"; };
-		"20D12C55-D381-4571-B332-5C614B49A79A" /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		"27838B07-CF46-4AAA-8953-79CB44F53940" /* quantization.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quantization.cpp; sourceTree = "<group>"; };
-		"27908EDB-7897-4D57-86ED-1A77F7DCDED2" /* unsafeRayTriIsct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unsafeRayTriIsct.h; sourceTree = "<group>"; };
-		"2A0813EC-0A66-41B5-9BB8-0AAD7B4E15A9" /* mesh.isct.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mesh.isct.inl; sourceTree = "<group>"; };
-		"2FACB0B5-959D-45B1-93A4-C943C3317A5C" /* gmpxx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmpxx.h; sourceTree = "<group>"; };
-		"3A252DBD-695A-433B-9FE8-F54340E018D4" /* MeshWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeshWrapper.h; sourceTree = "<group>"; };
-		"3AF57299-A86A-4DC5-852A-9D992D7055C6" /* unionFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unionFind.h; sourceTree = "<group>"; };
-		"3B665EA0-B502-4985-B448-93361EBDEF07" /* rawMesh.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rawMesh.inl; sourceTree = "<group>"; };
-		"40681F20-1E8A-4873-91F5-66D87AE56894" /* mesh.remesh.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mesh.remesh.inl; sourceTree = "<group>"; };
-		"408BB277-971E-4DEA-A241-A89938289B51" /* empty3d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = empty3d.cpp; sourceTree = "<group>"; };
-		"41622DEA-E6E8-48A0-9B51-667C9CEBD7EA" /* mesh.decl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mesh.decl.h; sourceTree = "<group>"; };
-		"4B2B8E99-FAD6-4B9D-AADF-80A9AA3FBFC7" /* aabvh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aabvh.h; sourceTree = "<group>"; };
-		"4D5C4C8F-BD9E-41B0-946F-223032891885" /* off.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = off.cpp; sourceTree = "<group>"; };
-		"633333A5-DD43-434F-A607-5402F7B4092C" /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
-		"65F92720-D0CB-4A55-B259-288B4B7AFFB9" /* MeshWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeshWrapper.cpp; sourceTree = "<group>"; };
-		"69D97E31-6F39-4819-B4BF-4E342F14487B" /* cork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cork.h; sourceTree = "<group>"; };
-		"6B0F9045-3E50-43A1-8311-0724965479AC" /* absext4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = absext4.h; sourceTree = "<group>"; };
-		"6DC851BB-B22B-4BF6-898E-DA61979FB753" /* shortVec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shortVec.h; sourceTree = "<group>"; };
-		"6E0D12CE-40F3-4C0C-B3EE-E726DCE21D46" /* memPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memPool.h; sourceTree = "<group>"; };
-		"6E75CD20-96D5-4214-A0D8-8C1B1DFEFD6C" /* triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
-		"6EC6D981-84B0-4E06-A969-3CF69D3A5FCB" /* corkMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = corkMesh.h; sourceTree = "<group>"; };
-		"72178A3A-3F4C-46B9-9846-1B3632E5EB84" /* triangle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triangle.c; sourceTree = "<group>"; };
-		"747B3343-6747-41EB-9CC1-ABB629AB1C4B" /* rawMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rawMesh.h; sourceTree = "<group>"; };
-		"76EE2347-8D35-4ADE-A91E-76FCE7E353F3" /* ifs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ifs.cpp; sourceTree = "<group>"; };
-		"7CEEF011-0EC1-4024-81EC-283931D70A75" /* gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmp.h; sourceTree = "<group>"; };
-		"8A71816F-D2CA-46F6-8F07-795ABF58F069" /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
-		"8BB63034-AEDA-4A61-BE80-F66DB186F95E" /* prelude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prelude.h; sourceTree = "<group>"; };
-		"A23B9613-75DC-4FB7-987B-697986A38F23" /* mesh.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mesh.inl; sourceTree = "<group>"; };
-		"A26B3E82-ADDE-4DB5-870D-1323AC94F525" /* quantization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quantization.h; sourceTree = "<group>"; };
-		"A736DAB9-8FE8-4688-A307-D0E704433654" /* ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ray.h; sourceTree = "<group>"; };
-		"AB5FB721-B2AC-4155-B7EE-11D09740CE11" /* ofxCorkCsg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxCorkCsg.cpp; sourceTree = "<group>"; };
-		"B31FB72E-1F21-4B4C-8414-67593175C40B" /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cpp; sourceTree = "<group>"; };
-		"C0E2B756-B76F-4380-A85E-A25ECB3C8370" /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
-		"C72CAEF2-3806-4E1A-A9CC-C80086D468A2" /* empty3d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = empty3d.h; sourceTree = "<group>"; };
-		"CE13104F-6239-4C08-882A-DC76D74C02B4" /* ofxCorkCsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCorkCsg.h; sourceTree = "<group>"; };
-		"D1624C8E-DD5C-49E8-94A7-FA8B486166F6" /* iterPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterPool.h; sourceTree = "<group>"; };
-		"D7718BFF-B397-43DC-A85E-EE8BC3293CD8" /* bbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bbox.h; sourceTree = "<group>"; };
-		"E2F8AC0F-DE2A-45BB-BCD4-41F3A1C458D3" /* fixext4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixext4.h; sourceTree = "<group>"; };
-		"E375EDCC-9666-424F-BFE0-DD27B1C712E4" /* files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = files.h; sourceTree = "<group>"; };
-		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
-		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		"E7E5A444-8B51-4280-A849-8588CE58D5F6" /* ext4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ext4.h; sourceTree = "<group>"; };
-		"EF2CB51F-390A-4B79-9E1F-42E23877D16F" /* mesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mesh.h; sourceTree = "<group>"; };
-		"F09BAC18-6A52-4926-85B0-3F1448511F91" /* mesh.bool.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mesh.bool.inl; sourceTree = "<group>"; };
-		"F39730A7-DDF6-43E8-A85C-126F32949846" /* fixint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixint.h; sourceTree = "<group>"; };
-		"FB7E82B8-70B4-4548-BCBE-D677616CE06F" /* gmpext4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmpext4.h; sourceTree = "<group>"; };
-		"FECD379F-A717-4239-A67E-E08619A3E208" /* mesh.topoCache.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mesh.topoCache.inl; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		"0B648DE5-194D-48E2-A5B2-5889ADB1DDC3" /* isct */ = {
-			isa = PBXGroup;
-			children = (
-				"408BB277-971E-4DEA-A241-A89938289B51" /* empty3d.cpp */,
-				"27838B07-CF46-4AAA-8953-79CB44F53940" /* quantization.cpp */,
-				"72178A3A-3F4C-46B9-9846-1B3632E5EB84" /* triangle.c */,
-				"6B0F9045-3E50-43A1-8311-0724965479AC" /* absext4.h */,
-				"C72CAEF2-3806-4E1A-A9CC-C80086D468A2" /* empty3d.h */,
-				"E7E5A444-8B51-4280-A849-8588CE58D5F6" /* ext4.h */,
-				"E2F8AC0F-DE2A-45BB-BCD4-41F3A1C458D3" /* fixext4.h */,
-				"F39730A7-DDF6-43E8-A85C-126F32949846" /* fixint.h */,
-				"FB7E82B8-70B4-4548-BCBE-D677616CE06F" /* gmpext4.h */,
-				"A26B3E82-ADDE-4DB5-870D-1323AC94F525" /* quantization.h */,
-				"6E75CD20-96D5-4214-A0D8-8C1B1DFEFD6C" /* triangle.h */,
-				"27908EDB-7897-4D57-86ED-1A77F7DCDED2" /* unsafeRayTriIsct.h */,
-			);
-			path = isct;
-			sourceTree = "<group>";
-		};
-		"14C77048-9725-41E8-A700-E1DF67C0B247" /* include */ = {
-			isa = PBXGroup;
-			children = (
-				"7CEEF011-0EC1-4024-81EC-283931D70A75" /* gmp.h */,
-				"2FACB0B5-959D-45B1-93A4-C943C3317A5C" /* gmpxx.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		"2A28C4CD-823D-4363-85A1-2E798C1F88FC" /* src */ = {
-			isa = PBXGroup;
-			children = (
-				"20D12C55-D381-4571-B332-5C614B49A79A" /* main.cpp */,
-				"633333A5-DD43-434F-A607-5402F7B4092C" /* ofApp.cpp */,
-				"C0E2B756-B76F-4380-A85E-A25ECB3C8370" /* ofApp.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		"482C37B7-35A0-491D-8075-356A171AC1B2" /* ofxCorkCsg */ = {
-			isa = PBXGroup;
-			children = (
-				"F1175765-2AA0-401E-A782-6D5FE1E82340" /* libs */,
-				"E0105713-ABB5-4156-9A87-9B732F7B5F86" /* src */,
-			);
-			path = ofxCorkCsg;
-			sourceTree = "<group>";
-		};
-		"705195BC-92B7-401B-A76B-1051BFE65F50" /* util */ = {
-			isa = PBXGroup;
-			children = (
-				"B31FB72E-1F21-4B4C-8414-67593175C40B" /* log.cpp */,
-				"8A71816F-D2CA-46F6-8F07-795ABF58F069" /* timer.cpp */,
-				"D1624C8E-DD5C-49E8-94A7-FA8B486166F6" /* iterPool.h */,
-				"6E0D12CE-40F3-4C0C-B3EE-E726DCE21D46" /* memPool.h */,
-				"8BB63034-AEDA-4A61-BE80-F66DB186F95E" /* prelude.h */,
-				"6DC851BB-B22B-4BF6-898E-DA61979FB753" /* shortVec.h */,
-				"3AF57299-A86A-4DC5-852A-9D992D7055C6" /* unionFind.h */,
-			);
-			path = util;
-			sourceTree = "<group>";
-		};
-		"8922B126-BA35-40A7-AF4F-C296D8C994C2" /* src */ = {
-			isa = PBXGroup;
-			children = (
-				"1A8E7C3B-4D62-4BA2-A668-E8C74198070B" /* cork.cpp */,
-				"CAD73BA4-BA76-4388-AA31-A81C3CA15DE1" /* file_formats */,
-				"0B648DE5-194D-48E2-A5B2-5889ADB1DDC3" /* isct */,
-				"705195BC-92B7-401B-A76B-1051BFE65F50" /* util */,
-				"C69E9E33-4FE0-46E8-A498-E6E4992E4B41" /* accel */,
-				"69D97E31-6F39-4819-B4BF-4E342F14487B" /* cork.h */,
-				"E51DD438-A450-495A-9917-8561C95264E0" /* math */,
-				"B6D0C96B-AB32-4098-B18C-CB9E8918A4B7" /* mesh */,
-				"C9715D46-465C-4E36-B0CC-69FC34A3B30C" /* rawmesh */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		"9C161854-52AF-42D2-B758-1F627839C921" /* gmp */ = {
-			isa = PBXGroup;
-			children = (
-				"14C77048-9725-41E8-A700-E1DF67C0B247" /* include */,
-			);
-			path = gmp;
-			sourceTree = "<group>";
-		};
-		"B6D0C96B-AB32-4098-B18C-CB9E8918A4B7" /* mesh */ = {
-			isa = PBXGroup;
-			children = (
-				"6EC6D981-84B0-4E06-A969-3CF69D3A5FCB" /* corkMesh.h */,
-				"F09BAC18-6A52-4926-85B0-3F1448511F91" /* mesh.bool.inl */,
-				"41622DEA-E6E8-48A0-9B51-667C9CEBD7EA" /* mesh.decl.h */,
-				"EF2CB51F-390A-4B79-9E1F-42E23877D16F" /* mesh.h */,
-				"A23B9613-75DC-4FB7-987B-697986A38F23" /* mesh.inl */,
-				"2A0813EC-0A66-41B5-9BB8-0AAD7B4E15A9" /* mesh.isct.inl */,
-				"40681F20-1E8A-4873-91F5-66D87AE56894" /* mesh.remesh.inl */,
-				"FECD379F-A717-4239-A67E-E08619A3E208" /* mesh.topoCache.inl */,
-			);
-			path = mesh;
-			sourceTree = "<group>";
-		};
-		BB4B014C10F69532006C3DED /* addons */ = {
-			isa = PBXGroup;
-			children = (
-				"482C37B7-35A0-491D-8075-356A171AC1B2" /* ofxCorkCsg */,
-			);
-			name = addons;
-			path = ../../../addons;
-			sourceTree = SOURCE_ROOT;
-		};
-		"BEB2CD34-3715-445F-A89C-68807E25FEAE" /* cork */ = {
-			isa = PBXGroup;
-			children = (
-				"8922B126-BA35-40A7-AF4F-C296D8C994C2" /* src */,
-			);
-			path = cork;
-			sourceTree = "<group>";
-		};
-		"C69E9E33-4FE0-46E8-A498-E6E4992E4B41" /* accel */ = {
-			isa = PBXGroup;
-			children = (
-				"4B2B8E99-FAD6-4B9D-AADF-80A9AA3FBFC7" /* aabvh.h */,
-			);
-			path = accel;
-			sourceTree = "<group>";
-		};
-		"C9715D46-465C-4E36-B0CC-69FC34A3B30C" /* rawmesh */ = {
-			isa = PBXGroup;
-			children = (
-				"747B3343-6747-41EB-9CC1-ABB629AB1C4B" /* rawMesh.h */,
-				"3B665EA0-B502-4985-B448-93361EBDEF07" /* rawMesh.inl */,
-			);
-			path = rawmesh;
-			sourceTree = "<group>";
-		};
-		"CAD73BA4-BA76-4388-AA31-A81C3CA15DE1" /* file_formats */ = {
-			isa = PBXGroup;
-			children = (
-				"10A9C3EE-C9E7-4E4F-8D5D-10FFFE6F7420" /* files.cpp */,
-				"76EE2347-8D35-4ADE-A91E-76FCE7E353F3" /* ifs.cpp */,
-				"4D5C4C8F-BD9E-41B0-946F-223032891885" /* off.cpp */,
-				"E375EDCC-9666-424F-BFE0-DD27B1C712E4" /* files.h */,
-			);
-			path = file_formats;
-			sourceTree = "<group>";
-		};
-		"E0105713-ABB5-4156-9A87-9B732F7B5F86" /* src */ = {
-			isa = PBXGroup;
-			children = (
-				"65F92720-D0CB-4A55-B259-288B4B7AFFB9" /* MeshWrapper.cpp */,
-				"AB5FB721-B2AC-4155-B7EE-11D09740CE11" /* ofxCorkCsg.cpp */,
-				"3A252DBD-695A-433B-9FE8-F54340E018D4" /* MeshWrapper.h */,
-				"CE13104F-6239-4C08-882A-DC76D74C02B4" /* ofxCorkCsg.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		E4B69B4A0A3A1720003C02F2 = {
-			isa = PBXGroup;
-			children = (
-				191CD6FA2847E21E0085CBB6 /* of.entitlements */,
-				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
-				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
-				191EF70929D778A400F35F26 /* openFrameworks */,
-				BB4B014C10F69532006C3DED /* addons */,
-				039A07FE2D53EA3200B8B21C /* example-simpleDebug.app */,
-				"2A28C4CD-823D-4363-85A1-2E798C1F88FC" /* src */,
-			);
-			sourceTree = "<group>";
-		};
-		"E51DD438-A450-495A-9917-8561C95264E0" /* math */ = {
-			isa = PBXGroup;
-			children = (
-				"D7718BFF-B397-43DC-A85E-EE8BC3293CD8" /* bbox.h */,
-				"A736DAB9-8FE8-4688-A307-D0E704433654" /* ray.h */,
-				"145F24AE-36CA-47F8-9124-AE51BD789D8D" /* vec.h */,
-			);
-			path = math;
-			sourceTree = "<group>";
-		};
-		"F1175765-2AA0-401E-A782-6D5FE1E82340" /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				"BEB2CD34-3715-445F-A89C-68807E25FEAE" /* cork */,
-				"9C161854-52AF-42D2-B758-1F627839C921" /* gmp */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* example-simple */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-simple" */;
-			buildPhases = (
-				BF26640B2C634C16004360E2 /* ShellScript */,
-				E42962A92163ECCD00A6A9E2 /* Run Script — Compile OF */,
-				E4B69B580A3A1756003C02F2 /* Sources */,
-				E4B69B590A3A1756003C02F2 /* Frameworks */,
-				E4C2427710CC5ABF004149E2 /* CopyFiles */,
-				E4A5B60F29BAAAE400C2D356 /* CopyFiles */,
-				19B789C429E5AB4A0082E9B8 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "example-simple";
-			productName = myOFApp;
-			productReference = 039A07FE2D53EA3200B8B21C /* example-simpleDebug.app */;
-			productType = "com.apple.product-type.application";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1620;
-			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-simple" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = E4B69B4A0A3A1720003C02F2;
-			productRefGroup = E4B69B4A0A3A1720003C02F2;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				E4B69B5A0A3A1756003C02F2 /* example-simple */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		19B789C429E5AB4A0082E9B8 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$OF_PATH/scripts/macos/xcode_project.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF26640B2C634C16004360E2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/bin/env bash";
-			shellScript = "";
-			showEnvVarsInLog = 0;
-		};
-		E42962A92163ECCD00A6A9E2 /* Run Script — Compile OF */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script — Compile OF";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "$OF_CORE_BUILD_COMMAND\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		E4B69B580A3A1756003C02F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				"1337E44B-F144-4975-ABBF-B50330B3D5EF" /* main.cpp in Sources */,
-				"949CC023-A5D3-4687-9926-B7BDA4D0F700" /* ofApp.cpp in Sources */,
-				"6708805A-9910-40AA-A202-B0C681F0BB80" /* cork.cpp in Sources */,
-				"6547261B-E201-46E2-A8FB-FEA5BC4AD743" /* files.cpp in Sources */,
-				"819AAB71-9D80-4D08-AFF2-2EEDCEF97D4F" /* ifs.cpp in Sources */,
-				"7B17C9B4-F786-44B5-8516-9773A806F2A2" /* off.cpp in Sources */,
-				"369DC71E-DB5B-475C-A925-AE6868BC07A1" /* empty3d.cpp in Sources */,
-				"F5F26AEB-BC82-4C62-9106-F1DDF7E52407" /* quantization.cpp in Sources */,
-				"2F7D54EF-64CC-4A66-BFE9-19A56033D261" /* triangle.c in Sources */,
-				"72841A6B-73E6-4797-BABF-11850D05BDD7" /* log.cpp in Sources */,
-				"9AD66097-3C95-4C8A-8DB4-BDCF4FB10C3D" /* timer.cpp in Sources */,
-				"4F236470-51BF-4CB8-BD98-C63050F27893" /* MeshWrapper.cpp in Sources */,
-				"7D8DE33F-FDF0-403E-A29C-0DF0FB8A2BD7" /* ofxCorkCsg.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
-			buildSettings = {
-				HEADER_SEARCH_PATHS = (
+	"_OFProjectGeneratorVersion": "ofGen v0.2.7",
+	"archiveVersion": "1",
+	"classes": {},
+	"objectVersion": "54",
+	"objects": {
+		"039A07FE2D53EA3200B8B21C": {
+			"explicitFileType": "wrapper.application",
+			"includeInIndex": "0",
+			"isa": "PBXFileReference",
+			"path": "example-simpleDebug.app",
+			"sourceTree": "BUILT_PRODUCTS_DIR"
+		},
+		"08867564-D465-4295-8C06-F0C0F8777CC4": {
+			"children": [
+				"2388AD26-300E-4811-9FC1-EBC8C0B4ECAC",
+				"2387ADAE-12F4-4670-BC7D-BE853D3934CD",
+				"F0C1352A-3B51-4DC3-A3D4-2DBEA318CEA9"
+			],
+			"isa": "PBXGroup",
+			"name": "src",
+			"path": "src",
+			"sourceTree": "<group>"
+		},
+		"0901D6D3-C8EB-4391-87B8-1CF4458151B7": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "gmp.h",
+			"path": "gmp.h",
+			"sourceTree": "<group>"
+		},
+		"09A9C1F4-3A9C-4C6E-AC6F-DC568DB171ED": {
+			"fileRef": "2388AD26-300E-4811-9FC1-EBC8C0B4ECAC",
+			"isa": "PBXBuildFile"
+		},
+		"191CD6FA2847E21E0085CBB6": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "text.plist.entitlements",
+			"path": "of.entitlements",
+			"sourceTree": "<group>"
+		},
+		"191EF70929D778A400F35F26": {
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "folder",
+			"name": "openFrameworks",
+			"path": "../../../libs/openFrameworks",
+			"sourceTree": "SOURCE_ROOT"
+		},
+		"1949315F-8511-447F-B84A-B64E86276FED": {
+			"fileRef": "2387ADAE-12F4-4670-BC7D-BE853D3934CD",
+			"isa": "PBXBuildFile"
+		},
+		"19B789C429E5AB4A0082E9B8": {
+			"alwaysOutOfDate": "1",
+			"buildActionMask": "2147483647",
+			"files": [],
+			"inputFileListPaths": [],
+			"inputPaths": [],
+			"isa": "PBXShellScriptBuildPhase",
+			"outputFileListPaths": [],
+			"outputPaths": [],
+			"runOnlyForDeploymentPostprocessing": "0",
+			"shellPath": "/bin/sh",
+			"shellScript": "\"$OF_PATH/scripts/macos/xcode_project.sh\"\n",
+			"showEnvVarsInLog": "0"
+		},
+		"1BACCF89-680D-405D-A8C2-4BE3CCF9973E": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "ofxCorkCsg.h",
+			"path": "ofxCorkCsg.h",
+			"sourceTree": "<group>"
+		},
+		"2387ADAE-12F4-4670-BC7D-BE853D3934CD": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "ofApp.cpp",
+			"path": "ofApp.cpp",
+			"sourceTree": "<group>"
+		},
+		"2388AD26-300E-4811-9FC1-EBC8C0B4ECAC": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "main.cpp",
+			"path": "main.cpp",
+			"sourceTree": "<group>"
+		},
+		"3F59BFCE-A11B-48A6-9899-49A4683D8E2C": {
+			"children": [
+				"8AFD189C-3BD7-40B0-BB63-9736D2F9741A"
+			],
+			"isa": "PBXGroup",
+			"name": "cork",
+			"path": "cork",
+			"sourceTree": "<group>"
+		},
+		"4D75167D-7704-41E0-BA36-CAAB7E2458F4": {
+			"children": [
+				"3F59BFCE-A11B-48A6-9899-49A4683D8E2C",
+				"EB326732-D065-4A0B-AFE2-CC2E3E7C6EC5"
+			],
+			"isa": "PBXGroup",
+			"name": "libs",
+			"path": "libs",
+			"sourceTree": "<group>"
+		},
+		"590B525E-73BE-44D4-8326-940147DE9F20": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "MeshWrapper.cpp",
+			"path": "MeshWrapper.cpp",
+			"sourceTree": "<group>"
+		},
+		"6514D6C4-FBFB-4095-BCAA-4A4C04B6F8D5": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "ofxCorkCsg.cpp",
+			"path": "ofxCorkCsg.cpp",
+			"sourceTree": "<group>"
+		},
+		"657917BC-CC68-4E1F-8997-BDBA80456376": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "gmpxx.h",
+			"path": "gmpxx.h",
+			"sourceTree": "<group>"
+		},
+		"899323F7-FDBF-4CA1-BAF8-08F0C85FA629": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "MeshWrapper.h",
+			"path": "MeshWrapper.h",
+			"sourceTree": "<group>"
+		},
+		"8AFD189C-3BD7-40B0-BB63-9736D2F9741A": {
+			"children": [
+				"A39B9819-133B-4F56-AFB6-1FE9EA39E4EC"
+			],
+			"isa": "PBXGroup",
+			"name": "include",
+			"path": "include",
+			"sourceTree": "<group>"
+		},
+		"9F5EB838-6421-407A-AC2A-7C272D4723B4": {
+			"fileRef": "6514D6C4-FBFB-4095-BCAA-4A4C04B6F8D5",
+			"isa": "PBXBuildFile"
+		},
+		"A39B9819-133B-4F56-AFB6-1FE9EA39E4EC": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "cork.h",
+			"path": "cork.h",
+			"sourceTree": "<group>"
+		},
+		"AC48450C-CB5C-423E-BA27-BF4B389130DD": {
+			"fileRef": "590B525E-73BE-44D4-8326-940147DE9F20",
+			"isa": "PBXBuildFile"
+		},
+		"BB4B014C10F69532006C3DED": {
+			"children": [
+				"E4029001-35D4-4C0A-9C1C-1FBFD7E9D629"
+			],
+			"isa": "PBXGroup",
+			"name": "addons",
+			"path": "../../../addons",
+			"sourceTree": "SOURCE_ROOT"
+		},
+		"BBE2369C-57A8-4E23-BFE9-C1FD1675E248": {
+			"children": [
+				"590B525E-73BE-44D4-8326-940147DE9F20",
+				"6514D6C4-FBFB-4095-BCAA-4A4C04B6F8D5",
+				"899323F7-FDBF-4CA1-BAF8-08F0C85FA629",
+				"1BACCF89-680D-405D-A8C2-4BE3CCF9973E"
+			],
+			"isa": "PBXGroup",
+			"name": "src",
+			"path": "src",
+			"sourceTree": "<group>"
+		},
+		"BF26640B2C634C16004360E2": {
+			"alwaysOutOfDate": "1",
+			"buildActionMask": "2147483647",
+			"files": [],
+			"inputFileListPaths": [],
+			"inputPaths": [],
+			"isa": "PBXShellScriptBuildPhase",
+			"outputFileListPaths": [],
+			"outputPaths": [],
+			"runOnlyForDeploymentPostprocessing": "0",
+			"shellPath": "/usr/bin/env bash",
+			"shellScript": "",
+			"showEnvVarsInLog": "0"
+		},
+		"D165BA6A-47D6-4217-8564-54B846EEDD02": {
+			"children": [
+				"0901D6D3-C8EB-4391-87B8-1CF4458151B7",
+				"657917BC-CC68-4E1F-8997-BDBA80456376"
+			],
+			"isa": "PBXGroup",
+			"name": "include",
+			"path": "include",
+			"sourceTree": "<group>"
+		},
+		"E4029001-35D4-4C0A-9C1C-1FBFD7E9D629": {
+			"children": [
+				"BBE2369C-57A8-4E23-BFE9-C1FD1675E248",
+				"4D75167D-7704-41E0-BA36-CAAB7E2458F4"
+			],
+			"isa": "PBXGroup",
+			"name": "ofxCorkCsg",
+			"path": "ofxCorkCsg",
+			"sourceTree": "<group>"
+		},
+		"E42962A92163ECCD00A6A9E2": {
+			"alwaysOutOfDate": "1",
+			"buildActionMask": "2147483647",
+			"files": [],
+			"inputPaths": [],
+			"isa": "PBXShellScriptBuildPhase",
+			"name": "Run Script — Compile OF",
+			"outputPaths": [],
+			"runOnlyForDeploymentPostprocessing": "0",
+			"shellPath": "/bin/sh",
+			"shellScript": "$OF_CORE_BUILD_COMMAND\n",
+			"showEnvVarsInLog": "0"
+		},
+		"E4A5B60F29BAAAE400C2D356": {
+			"buildActionMask": "2147483647",
+			"dstPath": "",
+			"dstSubfolderSpec": "6",
+			"files": [],
+			"isa": "PBXCopyFilesBuildPhase",
+			"runOnlyForDeploymentPostprocessing": "0"
+		},
+		"E4B69B4A0A3A1720003C02F2": {
+			"children": [
+				"191CD6FA2847E21E0085CBB6",
+				"E4B6FCAD0C3E899E008CF71C",
+				"E4EB6923138AFD0F00A09F29",
+				"191EF70929D778A400F35F26",
+				"BB4B014C10F69532006C3DED",
+				"039A07FE2D53EA3200B8B21C",
+				"08867564-D465-4295-8C06-F0C0F8777CC4"
+			],
+			"isa": "PBXGroup",
+			"sourceTree": "<group>"
+		},
+		"E4B69B4C0A3A1720003C02F2": {
+			"attributes": {
+				"BuildIndependentTargetsInParallel": "YES",
+				"LastUpgradeCheck": "1620"
+			},
+			"buildConfigurationList": "E4B69B4D0A3A1720003C02F2",
+			"compatibilityVersion": "Xcode 3.2",
+			"developmentRegion": "en",
+			"hasScannedForEncodings": "0",
+			"isa": "PBXProject",
+			"knownRegions": [
+				"en",
+				"Base"
+			],
+			"mainGroup": "E4B69B4A0A3A1720003C02F2",
+			"productRefGroup": "E4B69B4A0A3A1720003C02F2",
+			"projectDirPath": "",
+			"projectRoot": "",
+			"targets": [
+				"E4B69B5A0A3A1756003C02F2"
+			]
+		},
+		"E4B69B4D0A3A1720003C02F2": {
+			"buildConfigurations": [
+				"E4B69B4E0A3A1720003C02F2",
+				"E4B69B4F0A3A1720003C02F2"
+			],
+			"defaultConfigurationIsVisible": "0",
+			"defaultConfigurationName": "Release",
+			"isa": "XCConfigurationList"
+		},
+		"E4B69B4E0A3A1720003C02F2": {
+			"baseConfigurationReference": "E4EB6923138AFD0F00A09F29",
+			"buildSettings": {
+				"HEADER_SEARCH_PATHS": [
 					"$(OF_CORE_HEADERS)",
-					src,
-					src,
-					../../../addons/ofxCorkCsg/libs/cork/src,
-					../../../addons/ofxCorkCsg/libs/cork/src/accel,
-					../../../addons/ofxCorkCsg/libs/cork/src/file_formats,
-					../../../addons/ofxCorkCsg/libs/cork/src/isct,
-					../../../addons/ofxCorkCsg/libs/cork/src/math,
-					../../../addons/ofxCorkCsg/libs/cork/src/mesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/rawmesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/util,
-					../../../addons/ofxCorkCsg/libs/gmp/include,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx,
-					../../../addons/ofxCorkCsg/src,
-				);
-				OTHER_LDFLAGS = (
+					"src",
+					"src",
+					"../../../addons/ofxCorkCsg/libs/cork/include",
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx",
+					"../../../addons/ofxCorkCsg/libs/gmp/include",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx",
+					"../../../addons/ofxCorkCsg/src"
+				],
+				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a,
-				);
-			};
-			name = Debug;
-		};
-		E4B69B4F0A3A1720003C02F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
-			buildSettings = {
-				HEADER_SEARCH_PATHS = (
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx/libcork.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a"
+				]
+			},
+			"isa": "XCBuildConfiguration",
+			"name": "Debug"
+		},
+		"E4B69B4F0A3A1720003C02F2": {
+			"baseConfigurationReference": "E4EB6923138AFD0F00A09F29",
+			"buildSettings": {
+				"HEADER_SEARCH_PATHS": [
 					"$(OF_CORE_HEADERS)",
-					src,
-					src,
-					../../../addons/ofxCorkCsg/libs/cork/src,
-					../../../addons/ofxCorkCsg/libs/cork/src/accel,
-					../../../addons/ofxCorkCsg/libs/cork/src/file_formats,
-					../../../addons/ofxCorkCsg/libs/cork/src/isct,
-					../../../addons/ofxCorkCsg/libs/cork/src/math,
-					../../../addons/ofxCorkCsg/libs/cork/src/mesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/rawmesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/util,
-					../../../addons/ofxCorkCsg/libs/gmp/include,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx,
-					../../../addons/ofxCorkCsg/src,
-				);
-				OTHER_LDFLAGS = (
+					"src",
+					"src",
+					"../../../addons/ofxCorkCsg/libs/cork/include",
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx",
+					"../../../addons/ofxCorkCsg/libs/gmp/include",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx",
+					"../../../addons/ofxCorkCsg/src"
+				],
+				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a,
-				);
-			};
-			name = Release;
-		};
-		E4B69B600A3A1757003C02F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
-			buildSettings = {
-				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = (
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx/libcork.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a"
+				]
+			},
+			"isa": "XCBuildConfiguration",
+			"name": "Release"
+		},
+		"E4B69B580A3A1756003C02F2": {
+			"buildActionMask": "2147483647",
+			"files": [
+				"09A9C1F4-3A9C-4C6E-AC6F-DC568DB171ED",
+				"1949315F-8511-447F-B84A-B64E86276FED",
+				"AC48450C-CB5C-423E-BA27-BF4B389130DD",
+				"9F5EB838-6421-407A-AC2A-7C272D4723B4"
+			],
+			"isa": "PBXSourcesBuildPhase",
+			"runOnlyForDeploymentPostprocessing": "0"
+		},
+		"E4B69B590A3A1756003C02F2": {
+			"buildActionMask": "2147483647",
+			"files": [],
+			"isa": "PBXFrameworksBuildPhase",
+			"runOnlyForDeploymentPostprocessing": "0"
+		},
+		"E4B69B5A0A3A1756003C02F2": {
+			"buildConfigurationList": "E4B69B5F0A3A1757003C02F2",
+			"buildPhases": [
+				"BF26640B2C634C16004360E2",
+				"E42962A92163ECCD00A6A9E2",
+				"E4B69B580A3A1756003C02F2",
+				"E4B69B590A3A1756003C02F2",
+				"E4C2427710CC5ABF004149E2",
+				"E4A5B60F29BAAAE400C2D356",
+				"19B789C429E5AB4A0082E9B8"
+			],
+			"buildRules": [],
+			"dependencies": [],
+			"isa": "PBXNativeTarget",
+			"name": "example-simple",
+			"productName": "myOFApp",
+			"productReference": "039A07FE2D53EA3200B8B21C",
+			"productType": "com.apple.product-type.application"
+		},
+		"E4B69B5F0A3A1757003C02F2": {
+			"buildConfigurations": [
+				"E4B69B600A3A1757003C02F2",
+				"E4B69B610A3A1757003C02F2"
+			],
+			"defaultConfigurationIsVisible": "0",
+			"defaultConfigurationName": "Release",
+			"isa": "XCConfigurationList"
+		},
+		"E4B69B600A3A1757003C02F2": {
+			"baseConfigurationReference": "E4EB6923138AFD0F00A09F29",
+			"buildSettings": {
+				"ENABLE_HARDENED_RUNTIME": "YES",
+				"HEADER_SEARCH_PATHS": [
 					"$(OF_CORE_HEADERS)",
-					src,
-					src,
-					../../../addons/ofxCorkCsg/libs/cork/src,
-					../../../addons/ofxCorkCsg/libs/cork/src/accel,
-					../../../addons/ofxCorkCsg/libs/cork/src/file_formats,
-					../../../addons/ofxCorkCsg/libs/cork/src/isct,
-					../../../addons/ofxCorkCsg/libs/cork/src/math,
-					../../../addons/ofxCorkCsg/libs/cork/src/mesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/rawmesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/util,
-					../../../addons/ofxCorkCsg/libs/gmp/include,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx,
-					../../../addons/ofxCorkCsg/src,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				OTHER_LDFLAGS = (
+					"src",
+					"src",
+					"../../../addons/ofxCorkCsg/libs/cork/include",
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx",
+					"../../../addons/ofxCorkCsg/libs/gmp/include",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx",
+					"../../../addons/ofxCorkCsg/src"
+				],
+				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a,
-				);
-			};
-			name = Debug;
-		};
-		E4B69B610A3A1757003C02F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
-			buildSettings = {
-				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = (
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx/libcork.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a"
+				]
+			},
+			"isa": "XCBuildConfiguration",
+			"name": "Debug"
+		},
+		"E4B69B610A3A1757003C02F2": {
+			"baseConfigurationReference": "E4EB6923138AFD0F00A09F29",
+			"buildSettings": {
+				"ENABLE_HARDENED_RUNTIME": "YES",
+				"HEADER_SEARCH_PATHS": [
 					"$(OF_CORE_HEADERS)",
-					src,
-					src,
-					../../../addons/ofxCorkCsg/libs/cork/src,
-					../../../addons/ofxCorkCsg/libs/cork/src/accel,
-					../../../addons/ofxCorkCsg/libs/cork/src/file_formats,
-					../../../addons/ofxCorkCsg/libs/cork/src/isct,
-					../../../addons/ofxCorkCsg/libs/cork/src/math,
-					../../../addons/ofxCorkCsg/libs/cork/src/mesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/rawmesh,
-					../../../addons/ofxCorkCsg/libs/cork/src/util,
-					../../../addons/ofxCorkCsg/libs/gmp/include,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx,
-					../../../addons/ofxCorkCsg/src,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				OTHER_LDFLAGS = (
+					"src",
+					"src",
+					"../../../addons/ofxCorkCsg/libs/cork/include",
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx",
+					"../../../addons/ofxCorkCsg/libs/gmp/include",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx",
+					"../../../addons/ofxCorkCsg/src"
+				],
+				"OTHER_LDFLAGS": [
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a,
-					../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a,
-				);
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example-simple" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4B69B4E0A3A1720003C02F2 /* Debug */,
-				E4B69B4F0A3A1720003C02F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example-simple" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4B69B600A3A1757003C02F2 /* Debug */,
-				E4B69B610A3A1757003C02F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+					"../../../addons/ofxCorkCsg/libs/cork/lib/osx/libcork.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmp.a",
+					"../../../addons/ofxCorkCsg/libs/gmp/lib/osx/libgmpxx.a"
+				]
+			},
+			"isa": "XCBuildConfiguration",
+			"name": "Release"
+		},
+		"E4B6FCAD0C3E899E008CF71C": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "text.plist.xml",
+			"path": "openFrameworks-Info.plist",
+			"sourceTree": "<group>"
+		},
+		"E4C2427710CC5ABF004149E2": {
+			"buildActionMask": "2147483647",
+			"dstPath": "",
+			"dstSubfolderSpec": "10",
+			"files": [],
+			"isa": "PBXCopyFilesBuildPhase",
+			"runOnlyForDeploymentPostprocessing": "0"
+		},
+		"E4EB6923138AFD0F00A09F29": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"lastKnownFileType": "text.xcconfig",
+			"path": "Project.xcconfig",
+			"sourceTree": "<group>"
+		},
+		"EB326732-D065-4A0B-AFE2-CC2E3E7C6EC5": {
+			"children": [
+				"D165BA6A-47D6-4217-8564-54B846EEDD02"
+			],
+			"isa": "PBXGroup",
+			"name": "gmp",
+			"path": "gmp",
+			"sourceTree": "<group>"
+		},
+		"F0C1352A-3B51-4DC3-A3D4-2DBEA318CEA9": {
+			"fileEncoding": "4",
+			"isa": "PBXFileReference",
+			"name": "ofApp.h",
+			"path": "ofApp.h",
+			"sourceTree": "<group>"
+		}
+	},
+	"rootObject": "E4B69B4C0A3A1720003C02F2"
 }
